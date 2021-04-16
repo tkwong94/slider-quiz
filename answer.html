@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script>
+        function setSlider(images) {
+            if (images === undefined) {
+                throw "Missing image array"
+            }
+
+            if (images.length == 0) {
+                throw "Image array length invalid"
+            }
+
+            if (typeof images != 'object') {
+                throw "Parameter type type: use array instead of " + typeof images;
+            }
+
+            var imageIndex = 0;
+
+            setInterval(function() {
+                imageIndex = (imageIndex == images.length - 1 ? 0 : imageIndex + 1);
+                document.getElementById("images").src = images[imageIndex];
+            }, 2000)
+        }
+
+        window.onload = function() {
+            // setSlider(['./assets/images/02.jpeg']);
+            // setSlider(['./assets/images/01.jpeg', './assets/images/02.jpeg', './assets/images/03.jpeg'])
+
+            try {
+                // setSlider();
+                // setSlider([]);
+                // setSlider('./assets/images/02.jpeg')
+                setSlider(1);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <img id="images" src="./assets/images/01.jpeg" />
+</body>
+
+</html>
+
+//relative path or absolute path
