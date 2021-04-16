@@ -1,0 +1,48 @@
+====Case 1====
+Function call:
+setSlider(['./assets/images/02.jpeg'])   
+
+Expected result:
+change image src to 02.jpeg
+
+====Case 2====
+Function call:
+setSlider(['./assets/images/01.jpeg','./assets/images/02.jpeg',''./assets/images/03.jpeg'])
+
+Expected result:
+switch images between 01.jpeg, 02.jpeg and 03.jpeg in every 2 seconds
+
+====Case 3====
+Function call:
+setSlider()
+
+Expected result:
+show error message [Missing image array] in console
+
+Hint:
+use try-catch for error handling
+
+====Case 4====
+Function call:
+setSlider([])
+
+Expected result:
+show error message [Image array length invalid] in console
+
+Hint:
+to get array length, use property array.length
+
+====Case 5====
+Function call:
+setSlider('./assets/images/02.jpeg')
+
+Expected result:
+show error message [Parameter type type: use array instead of String] in console
+
+
+====Case 6====
+Function call:
+setSlider(1)
+
+Expected result:
+show error message [Parameter type type: use array instead of Number] in console
